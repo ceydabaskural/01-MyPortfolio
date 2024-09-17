@@ -13,5 +13,19 @@ namespace _01_MyPortfolio.Controllers
         {
             return View();
         }
+
+        public PartialViewResult PartialHead()
+        {
+            return PartialView();
+        } 
+        public PartialViewResult PartialSideBar()
+        {
+            return PartialView();
+        }
+        
+        public PartialViewResult PartialNavbar()
+        {
+            return PartialView();
+        }
     }
 }
