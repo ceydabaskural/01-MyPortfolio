@@ -41,6 +41,12 @@ namespace _01_MyPortfolio.Controllers
             return RedirectToAction("SkillList");
         }
 
+        [HttpGet]
+        public ActionResult EditSkill()
+        {
+            return View();
+        }
+
 
     }
 }

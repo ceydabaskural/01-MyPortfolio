@@ -6,8 +6,11 @@
 
 <h2>Yeni Yetenek Girişi</h2>
 
+
+@*method="post" diyerek aşağıdaki kodlar post işlemi olduğu zaman çalışacak demiş oluyoruz. Örneğin Post işlemi de sayfada bir butona tıklandığı zaman olabilir.*@
 <form method="post">
     <label>Yetenek Başlığı</label>
+    @*!!! inputun name kısmına verdiğimiz isim SQL deki ismiyle aynı olmalı !!! *@
     <input type="text" name="Title" class="form-control" />
     <br />
     <label>Yetenek İkonu</label>

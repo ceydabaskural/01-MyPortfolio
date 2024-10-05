@@ -36,5 +36,6 @@ namespace _01_MyPortfolio.Models
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Testimonial> Testimonial { get; set; }
         public virtual DbSet<Work> Work { get; set; }
+        public virtual DbSet<SocialMedia> SocialMedia { get; set; }
     }
 }

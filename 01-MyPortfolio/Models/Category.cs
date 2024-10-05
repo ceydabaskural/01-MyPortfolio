@@ -22,6 +22,7 @@ namespace _01_MyPortfolio.Models
     
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public Nullable<bool> CategoryStatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Message { get; set; }
