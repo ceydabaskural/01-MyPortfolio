@@ -15,8 +15,8 @@ namespace _01_MyPortfolio.Controllers
             List<SelectListItem> values = (from x in context.Category.ToList()
                                          select new SelectListItem
                                          {
-                                             Text=x.CategoryName,
-                                             Value=x.CategoryId.ToString()
+                                             Text=x.CategoryName, //kullanıcıya gözüken kısım
+                                             Value=x.CategoryId.ToString() //arka planda çalışan kısım
                                          }).ToList();
             ViewBag.v = values;                             
             return View();
