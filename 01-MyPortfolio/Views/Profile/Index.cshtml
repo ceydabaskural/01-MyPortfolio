@@ -1,0 +1,37 @@
+﻿@model List<_01_MyPortfolio.Models.Profile>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2 class="mb-4">Profilim</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ad-Soyad</th>
+        <th>Açıklama</th>
+        <th>Adres</th>
+        <th>Email</th>
+        <th>Numara</th>
+        <th>Github</th>
+        <th>Fotoğraf</th>
+        <th>Harita</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Github</td>
+            <td>@item.ImageUrl</td>
+            <td>@item.MapLocation</td>
+            <td><a href="/Profile/DeleteProfile/@item.ProfileId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Profile/UpdateProfile/@item.ProfileId" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Profile/CreateProfile" class="btn btn-info">Yeni Profil Girişi</a>

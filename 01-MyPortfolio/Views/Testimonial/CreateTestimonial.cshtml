@@ -1,0 +1,24 @@
+﻿@model _01_MyPortfolio.Models.Testimonial
+@{
+    ViewBag.Title = "CreateTestimonial";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Referans Girişi</h2>
+
+<form method="post">
+    <label>Ad Soyad</label>
+    <input type="text" name="Name" class="form-control" />
+    <br />
+    <label>Unvan</label>
+    <input type="text" name="Title" class="form-control" />
+    <br />
+    <label>Yorum</label>
+    <input type="text" name="Comment" class="form-control" />
+    <br />
+    <label>ImageUrl</label>
+    <input type="text" name="ImageUrl" class="form-control" />
+    <br />
+    <button class="btn btn-info">Referansı Ekle</button>
+</form>
+

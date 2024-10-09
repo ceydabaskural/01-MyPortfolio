@@ -1,10 +1,8 @@
-﻿
+﻿@model List<_01_MyPortfolio.Models.Category>
 @{
-    Layout = null;
+    Layout = "~/Views/Admin/Index.cshtml";
 }
-
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
+<h2 class="mb-4">Mesaj Kategorileri</h2>
 <div class="container">
     <br /><br />
     <table class="table table-bordered">
@@ -12,21 +10,20 @@
             <th>Kategori Id</th>
             <th>Kategori Adı</th>
             <th>Kategori Durumu</th>
-            <th>Detaylar</th>
         </tr>
-        
-        <tr>
-            <td>1</td>
-            <td>Meyve Sebze</td>
-            <td>Aktif</td>
-            <td><button class="btn btn-info">Detaylar</button></td>
-        </tr>
-        
-        <tr>
-            <td>2</td>
-            <td>İçecek</td>
-            <td>Aktif</td>
-            <td><button class="btn btn-info">Detaylar</button></td>
-        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td>@item.CategoryStatus</td>
+
+                <td><a href="/Category/DeleteCategory/@item.CategoryId" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Category/UpdateCategory/@item.CategoryId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+
     </table>
+    <td><a href="/Category/CreateCategory" class="btn btn-info">Yeni Kategori Ekle</a></td>
 </div>

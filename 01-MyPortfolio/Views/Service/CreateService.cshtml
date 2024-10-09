@@ -1,0 +1,22 @@
+﻿@model _01_MyPortfolio.Models.Service
+@{
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Hizmet Girişi</h2>
+
+<form method="post">
+    <input type="hidden" name="ServiceId" required class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" name="Title" required class="form-control" />
+    <br />
+    <label>Açıklama</label>
+    <input type="text" name="Description" required class="form-control" />
+    <br />
+    <label>İkon</label>
+    <input type="text" name="Icon" required maxlength="250" class="form-control" />
+    <br />
+    <button class="btn btn-info">Hizmet Ekle</button>
+</form>
+

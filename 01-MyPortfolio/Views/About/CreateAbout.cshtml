@@ -1,0 +1,22 @@
+﻿@model  _01_MyPortfolio.Models.About
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<h2>Yeni Hakkımda Girişi</h2>
+
+<form method="post">
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+    <label>Detaylar</label>
+    @Html.TextBoxFor(x => x.Detail, new { @class = "form-control" })
+    <br />
+    <label>Fotoğraf</label>
+    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info"> Ekle</button>
+</form>
+
+

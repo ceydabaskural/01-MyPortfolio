@@ -25,8 +25,34 @@
             <td>@item.Name</td>
             <td>@item.Subject</td>
             <td>@item.SendDate</td>
-    @*İlişkili Tablo oluşturduğumuz için Category tablosundan CategoryName e ulaşabildik*@
-            <td>@item.Category.CategoryName</td>
+
+            @*Categories*@
+            @if (item.Category.CategoryName == "Proje Talebi")
+            {
+                <td bgcolor="#54C392">@item.Category.CategoryName</td>
+            }
+            else if (item.Category.CategoryName == "Teşekkür")
+            {
+                <td bgcolor="#aab7b8">@item.Category.CategoryName</td>
+            }
+            else if (item.Category.CategoryName == "Öneri")
+            {
+                <td bgcolor="#F2E5BF">@item.Category.CategoryName</td>
+            }
+            else if (item.Category.CategoryName == "Kutlama")
+            {
+                <td bgcolor="#257180">@item.Category.CategoryName</td>
+            }
+            else if (item.Category.CategoryName == "Şikayet")
+            {
+                <td bgcolor="#FD8B51">@item.Category.CategoryName</td>
+            }
+            else
+            {
+                <td bgcolor="#798645">@item.Category.CategoryName</td>
+            }
+
+            @*Status*@
             @if (item.IsRead == false)
             {
                 <td><a href="/Message/MessageStatusChangeToTrue/@item.MessageId" class="btn btn-info">Okundu Olarak İşaretle</a></td>
@@ -36,7 +62,7 @@
                 <td><a href="/Message/MessageStatusChangeToFalse/@item.MessageId" class="btn btn-warning">Okunmadı Olarak İşaretle</a></td>
             }
 
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a></td>
             <td><a href="/Message/MessageDetails/@item.MessageId" class="btn btn-secondary">Mesajı Aç</a></td>
         </tr>
     }

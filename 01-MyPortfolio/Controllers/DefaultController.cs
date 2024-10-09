@@ -1,4 +1,5 @@
 ﻿using _01_MyPortfolio.Models;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,6 +90,33 @@ namespace _01_MyPortfolio.Controllers
         {
             var values = context.SocialMedia.Where(x => x.Status==true).ToList();
             return PartialView(values);
+        }
+
+        public PartialViewResult PartialExperience()
+        {
+            var values = context.Experience.ToList();
+
+            return PartialView(values);
+        } 
+        public PartialViewResult PartialService()
+        {
+            var values = context.Service.ToList();
+
+            return PartialView(values);
+        } 
+        public PartialViewResult PartialPortfolio()
+        {
+            var value = context.Work.ToList();
+
+            return PartialView(value);
+        }
+        public PartialViewResult PartialTestimonial()
+        {
+            var value=context.Testimonial.ToList();
+
+            ViewBag.Address = context.Profile.Select(a => a.Address).FirstOrDefault();
+
+            return PartialView(value);
         }
 
 

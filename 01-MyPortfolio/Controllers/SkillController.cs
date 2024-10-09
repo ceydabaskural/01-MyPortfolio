@@ -1,9 +1,12 @@
 ﻿using _01_MyPortfolio.Models;
 using Microsoft.Win32;
+using PagedList;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace _01_MyPortfolio.Controllers
@@ -11,11 +14,12 @@ namespace _01_MyPortfolio.Controllers
     public class SkillController : Controller
     {
         MyPortfolioDbEntities context = new MyPortfolioDbEntities();
-        public ActionResult SkillList()
+        public ActionResult SkillList(int p=1)
         {
-            var values =context.Skill.ToList();
+            var values = context.Skill.ToList().ToPagedList(p, 5);
 
             return View(values);
+
         }
 
         [HttpGet]
@@ -42,9 +46,37 @@ namespace _01_MyPortfolio.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditSkill()
+        public ActionResult UpdateSkill(int id)
         {
-            return View();
+            var value = context.Skill.Find(id);
+            return View(value);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateSkill(Skill skill)
+        {
+            var value = context.Skill.Find(skill.SkillId);
+            value.Title = skill.Title;
+            value.Icon = skill.Icon;
+            value.Value = skill.Value;
+            context.SaveChanges();
+            return RedirectToAction("SkillList");
+        }
+
+        public ActionResult PieChart()
+        {
+            ArrayList xvalue = new ArrayList();
+            ArrayList yvalue = new ArrayList();
+            var data = context.Skill.ToList();
+
+
+            data.ToList().ForEach(x => xvalue.Add(x.Title));
+            data.ToList().ForEach(y => yvalue.Add(y.Icon));
+
+            var graphic = new Chart(width: 1000, height: 500).AddTitle("Yetenekler").AddSeries(chartType: "Pie", name: "Yetenek", xValue: xvalue, yValues: yvalue);
+
+            return File(graphic.ToWebImage().GetBytes(), "image/jpeg");
+
         }
 
 

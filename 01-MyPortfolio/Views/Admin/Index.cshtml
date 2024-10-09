@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
@@ -9,16 +10,16 @@
 
 <body>
     <div class="wrapper d-flex align-items-stretch">
-        
-        @Html.Action("PartialSideBar","Admin")
+
+        @Html.Action("PartialSideBar", "Admin")
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5">
 
-            @Html.Action("PartialNavbar","Admin")
+            @Html.Action("PartialNavbar", "Admin")
 
             @RenderBody()
-            
+
         </div>
     </div>
 

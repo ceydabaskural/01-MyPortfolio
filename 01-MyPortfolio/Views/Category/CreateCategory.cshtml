@@ -1,23 +1,23 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "CreateCategory";
+    Layout = "~/Views/Admin/Index.cshtml";
 }
 
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h2>Yeni Kategori Girişi</h2>
 
-<div class="container">
-    <h3 class="alert alert-success">Yeni Kategori Ekleme Alanı</h3>
 
+@*method="post" diyerek aşağıdaki kodlar post işlemi olduğu zaman çalışacak demiş oluyoruz. Örneğin Post işlemi de sayfada bir butona tıklandığı zaman olabilir.*@
+<form method="post">
+    @*!!! inputun name kısmına verdiğimiz isim SQL deki ismiyle aynı olmalı !!! *@
+    <input type="hidden" name="CategoryId" required maxlength="5" class="form-control" />
+    <br />
     <label>Kategori Adı</label>
-    <input type="text" class="form-control" />
+    <input type="text" name="CategoryName" class="form-control" />
     <br />
+    <label>Kategori Durumu</label>
+    <input type="text" name="CategoryStatus" class="form-control" />
+    <br />
+    <button class="btn btn-info">Yeni Kategori Ekle</button>
+</form>
 
-    <label>Kategori Açıklaması</label>
-    <input type="text" class="form-control" />
-    <br />
-
-    <label>Kategori Değeri</label>
-    <input type="text" class="form-control" />
-    <br />
-    <button class="btn btn-primary">Kategori Oluştur</button>
-</div>
