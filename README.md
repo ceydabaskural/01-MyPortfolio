@@ -42,4 +42,5 @@ _Bu proje M&Y Yazlım Akademi Danışmanlık bünyesinde almış olduğum eğiti
 ![Ekran görüntüsü 2024-10-09 174715](https://github.com/user-attachments/assets/84543e1c-60f8-48e8-8ad1-d628e18f49a8)
 
 
+![image](https://github.com/user-attachments/assets/c1024845-9181-415f-becc-72196e26485a)
 
