@@ -63,21 +63,21 @@ namespace _01_MyPortfolio.Controllers
             return RedirectToAction("SkillList");
         }
 
-        public ActionResult PieChart()
-        {
-            ArrayList xvalue = new ArrayList();
-            ArrayList yvalue = new ArrayList();
-            var data = context.Skill.ToList();
+        //public ActionResult PieChart()
+        //{
+        //    ArrayList xvalue = new ArrayList();
+        //    ArrayList yvalue = new ArrayList();
+        //    var data = context.Skill.ToList();
 
 
-            data.ToList().ForEach(x => xvalue.Add(x.Title));
-            data.ToList().ForEach(y => yvalue.Add(y.Icon));
+        //    data.ToList().ForEach(x => xvalue.Add(x.Title));
+        //    data.ToList().ForEach(y => yvalue.Add(y.Icon));
 
-            var graphic = new Chart(width: 1000, height: 500).AddTitle("Yetenekler").AddSeries(chartType: "Pie", name: "Yetenek", xValue: xvalue, yValues: yvalue);
+        //    var graphic = new Chart(width: 1000, height: 500).AddTitle("Yetenekler").AddSeries(chartType: "Pie", name: "Yetenek", xValue: xvalue, yValues: yvalue);
 
-            return File(graphic.ToWebImage().GetBytes(), "image/jpeg");
+        //    return File(graphic.ToWebImage().GetBytes(), "image/jpeg");
 
-        }
+        //}
 
 
     }

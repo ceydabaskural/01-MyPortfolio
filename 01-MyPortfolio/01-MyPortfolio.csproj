@@ -170,6 +170,7 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\GraphicController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -593,7 +594,6 @@
     <Content Include="Views\Service\UpdateService.cshtml" />
     <Content Include="Views\Service\CreateService.cshtml" />
     <Content Include="Views\SocialMedia\Index.cshtml" />
-    <Content Include="Views\Skill\PieChart.cshtml" />
     <Content Include="Views\Category\UpdateCategory.cshtml" />
     <Content Include="Views\Education\UpdateEducation.cshtml" />
     <Content Include="Views\Education\CreateEducation.cshtml" />
@@ -607,6 +607,8 @@
     <Content Include="Views\SocialMedia\CreateSocialMedia.cshtml" />
     <Content Include="Views\SocialMedia\UpdateSocialMedia.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Graphic\PartialChartSkill.cshtml" />
+    <Content Include="Views\Graphic\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
